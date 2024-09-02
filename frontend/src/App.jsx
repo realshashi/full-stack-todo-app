@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState , useEffect } from "react";
 import './App.css'
 import CreateTodo from './components/CreateTodo'
 import  Todos  from "./components/Todo";
@@ -10,8 +9,8 @@ const [todos,setTodos] = useState([]);
 
 useEffect(() => {
   setInterval(() => {
-    fetch('http://localhost:3000/todos')
-.then(async function(res){
+  fetch('http://localhost:3000/todos')
+  .then(async function(res){
   const json = await res.json();
   setTodos(json.todos);
 })
